@@ -22,6 +22,9 @@ public class Personne {
 	
 	@DatabaseField(defaultValue="false")
 	private Boolean is_agent;
+	
+	@DatabaseField(defaultValue="false")
+	private Boolean is_admin;
     
     public Personne() {
     }
