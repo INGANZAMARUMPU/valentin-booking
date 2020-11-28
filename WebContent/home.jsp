@@ -6,8 +6,8 @@
 </head>
 
 <body>
-	<a href="/login">connexion</a>
-	<a href="/register">s'abonner</a>
+	<a href="login">connexion</a>
+	<a href="register">s'abonner</a>
 </body>
 
 </html>
