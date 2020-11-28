@@ -6,9 +6,7 @@
 </head>
 
 <body>
-	<a href="/">accueil</a>
-	<a href="login">connexion</a>
-	<a href="register">s'abonner</a>
+<%@ include file="menu.jsp" %>
 </body>
 
 </html>
