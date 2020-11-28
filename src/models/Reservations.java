@@ -3,7 +3,7 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 
-@DatabaseTable(tableName = "spectacle")
+@DatabaseTable(tableName = "reservation")
 public class Reservations {
 	    
     @DatabaseField(id = true)

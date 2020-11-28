@@ -14,9 +14,9 @@ public class Connectrice {
 	public Dao<Personne, String> personneDAO;
 	public Dao<Reservations, String> reservationDAO;
 	public Dao<Spectacle, String> spectacleDAO;
+    String databaseUrl = "jdbc:sqlite:spectacles.sqlite3";
 
 	public Connectrice() {
-        String databaseUrl = "db.sqlite3";
         try {
 			ConnectionSource connectionSource = new JdbcConnectionSource(databaseUrl);
 
@@ -24,9 +24,9 @@ public class Connectrice {
 			reservationDAO = DaoManager.createDao(connectionSource, Reservations.class);
 			spectacleDAO = DaoManager.createDao(connectionSource, Spectacle.class);
 
-			TableUtils.createTable(connectionSource, Personne.class);
-			TableUtils.createTable(connectionSource, Reservations.class);
-			TableUtils.createTable(connectionSource, Spectacle.class);
+			TableUtils.createTableIfNotExists(connectionSource, Personne.class);
+			TableUtils.createTableIfNotExists(connectionSource, Reservations.class);
+			TableUtils.createTableIfNotExists(connectionSource, Spectacle.class);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

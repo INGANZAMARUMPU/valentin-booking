@@ -21,15 +21,19 @@ public class Spectacle {
     @DatabaseField
     private Integer places;
     
+    @DatabaseField
+    private String date;
+    
     public Spectacle() {
     }
 
-	public Spectacle(String name, Integer prix, Integer prix_livraison, Integer places) {
+	public Spectacle(String name, Integer prix, Integer prix_livraison, Integer places, String date) {
 		super();
 		this.name = name;
 		this.prix = prix;
 		this.prix_livraison = prix_livraison;
 		this.places = places;
+		this.date = date;
 	}
 
 	public Integer getId() {
@@ -70,6 +74,19 @@ public class Spectacle {
 
 	public void setPlaces(Integer places) {
 		this.places = places;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	@Override
+	public String toString() {
+		return "Spectacle [name=" + name + ", prix=" + prix + ", places=" + places + ", date=" + date + "]";
 	}
 
 }
