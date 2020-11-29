@@ -13,6 +13,9 @@ public class Spectacle {
     private String name;
     
     @DatabaseField
+    private String details;
+    
+    @DatabaseField
     private Integer prix;
     
     @DatabaseField
@@ -24,16 +27,22 @@ public class Spectacle {
     @DatabaseField
     private String date;
     
+    @DatabaseField
+    private String cover;
+    
     public Spectacle() {
     }
 
-	public Spectacle(String name, Integer prix, Integer prix_livraison, Integer places, String date) {
+	public Spectacle(String name, String details, Integer prix, Integer prix_livraison, Integer places, String date,
+			String cover) {
 		super();
 		this.name = name;
+		this.details = details;
 		this.prix = prix;
 		this.prix_livraison = prix_livraison;
 		this.places = places;
 		this.date = date;
+		this.cover = cover;
 	}
 
 	public Integer getId() {
@@ -50,6 +59,14 @@ public class Spectacle {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDetails() {
+		return details;
+	}
+
+	public void setDetails(String details) {
+		this.details = details;
 	}
 
 	public Integer getPrix() {
@@ -82,6 +99,14 @@ public class Spectacle {
 
 	public void setDate(String date) {
 		this.date = date;
+	}
+
+	public String getCover() {
+		return cover;
+	}
+
+	public void setCover(String cover) {
+		this.cover = cover;
 	}
 
 	@Override
