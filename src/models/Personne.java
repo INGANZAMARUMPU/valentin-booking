@@ -29,13 +29,12 @@ public class Personne {
     public Personne() {
     }
 
-	public Personne(String username, String password, String domicile, String email, Boolean is_agent) {
+	public Personne(String username, String password, String domicile, String email) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.domicile = domicile;
 		this.email = email;
-		this.is_agent = is_agent;
 	}
 
 	public Integer getId() {
