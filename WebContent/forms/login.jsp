@@ -11,6 +11,7 @@
 <%@ include file="../menu.jsp" %>
 
 <form action="login" method="post">
+	<p class="erreur">${erreur}</p>
 	<div>
 		<label for="username">Nom d'utilisateur</label>
 		<br>

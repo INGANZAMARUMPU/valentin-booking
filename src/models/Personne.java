@@ -8,7 +8,7 @@ public class Personne {
     @DatabaseField(id = true)
     private Integer id;
     
-    @DatabaseField
+    @DatabaseField(unique=true)
     private String username;
 
     @DatabaseField
@@ -44,7 +44,7 @@ public class Personne {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
+	
 	public String getUsername() {
 		return username;
 	}
