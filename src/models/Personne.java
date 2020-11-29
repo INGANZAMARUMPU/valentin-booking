@@ -84,4 +84,13 @@ public class Personne {
 	public void setIs_agent(Boolean is_agent) {
 		this.is_agent = is_agent;
 	}
+
+	public Boolean getIs_admin() {
+		return is_admin;
+	}
+
+	public void setIs_admin(Boolean is_admin) {
+		this.is_admin = is_admin;
+	}
+	
 }

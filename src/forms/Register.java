@@ -47,6 +47,7 @@ public class Register extends HttpServlet {
 				Home.connectrice.personneDAO.create(personne);
 				HttpSession session = request.getSession(true);
 				session.setAttribute("user", personne);
+		    	getServletContext().getRequestDispatcher("/home.jsp").forward(request, response);
 			} catch (SQLException e) {
 		    	request.setAttribute("erreur", e.getMessage());
 			}
