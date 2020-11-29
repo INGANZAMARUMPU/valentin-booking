@@ -28,7 +28,7 @@ public class Home extends HttpServlet {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		if(request.getAttribute("logout") != null){
+		if(request.getParameter("logout") != null){
 			HttpSession session = request.getSession();
 			session.removeAttribute("user");
 		}

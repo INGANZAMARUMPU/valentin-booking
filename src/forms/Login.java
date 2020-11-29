@@ -45,7 +45,7 @@ public class Login extends HttpServlet {
 			    if(personne == null)
 			    	request.setAttribute("erreur", "identifiants incorrects");
 			    else {
-					HttpSession session = request.getSession(true);
+					HttpSession session = request.getSession();
 					session.setAttribute("user", personne);
 			    }
 			} catch (SQLException e) {

@@ -2,7 +2,7 @@
 <div class="menu">
 	<a href="home">accueil</a>
 	<c:choose>
-		<c:when test="${sessionScope.user == null}">
+		<c:when test="${empty sessionScope.user}">
 			<a href="login">connexion</a>
 			<a href="register">s'abonner</a>
 		</c:when>

@@ -2,7 +2,9 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Les Spectacles</title>
-<link rel='stylesheet' href='style.css'>
+<style type="text/css">
+	<%@ include file="/style.css" %>
+</style>
 </head>
 
 <body>

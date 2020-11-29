@@ -5,6 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>connexion</title>
+<style type="text/css">
+	<%@ include file="/style.css" %>
+</style>
 </head>
 <body>
 
