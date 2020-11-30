@@ -1,0 +1,17 @@
+.liste{
+}
+.spectacle{
+	display: inline-block;
+	min-width: 100px;
+	max-width: 160px;
+	border: 1px solid black;
+	border-radius: 3px;
+	margin: 3px;
+	padding: 2px;
+}
+.spectacle a {
+	display: block;
+	width: 100%;
+	text-align: center;
+	text-decoration: none;
+}

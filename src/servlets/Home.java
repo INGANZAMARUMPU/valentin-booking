@@ -26,7 +26,7 @@ public class Home extends HttpServlet {
 		try{
 			spectacles = connectrice.spectacleDAO.queryForAll();
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.err.println("======= "+e.getMessage());
 		}
 		if(request.getParameter("logout") != null){
 			HttpSession session = request.getSession();

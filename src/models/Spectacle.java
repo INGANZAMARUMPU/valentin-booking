@@ -1,4 +1,5 @@
 package models;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.j256.ormlite.field.DatabaseField;
@@ -95,8 +96,8 @@ public class Spectacle {
 		this.places = places;
 	}
 
-	public Date getDate() {
-		return date;
+	public String getDate() {
+		return new SimpleDateFormat("dd/MM/yyyy").format(date);
 	}
 
 	public void setDate(Date date) {
