@@ -18,6 +18,10 @@
 		<servlet-class>forms.Register</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>form_reservation</servlet-name>
+		<servlet-class>forms.Reservation</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>form_spectacle</servlet-name>
 		<servlet-class>forms.Spectacles</servlet-class>
 	</servlet>

@@ -29,9 +29,9 @@
 						<div>${ spectacle.details }</div>
 						<c:choose>
 							<c:when test="${!empty sessionScope.user }">
-								<a href="#">Reserver</a>
+								<a href="form_reservation?user=${ sessionScope.user.id }">Reserver</a>
 								<c:if test="${!empty sessionScope.user.is_agent }">
-									<a href="#">Abonner</a>
+									<a href="form_reservation">Abonner</a>
 								</c:if>
 								<c:if test="${!empty sessionScope.user.is_admin }">
 									<a href="#">Modifier</a>
