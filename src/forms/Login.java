@@ -47,7 +47,8 @@ public class Login extends HttpServlet {
 			    else {
 					HttpSession session = request.getSession();
 					session.setAttribute("user", personne);
-			    	getServletContext().getRequestDispatcher("/home.jsp").forward(request, response);
+			    	getServletContext().getRequestDispatcher("/").forward(request, response);
+			    	return;
 			    }
 			} catch (SQLException e) {
 		    	request.setAttribute("erreur", e.getMessage());

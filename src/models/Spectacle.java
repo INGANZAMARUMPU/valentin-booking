@@ -1,4 +1,6 @@
 package models;
+import java.util.Date;
+
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -9,7 +11,7 @@ public class Spectacle {
     @DatabaseField(id = true)
     private Integer id;
     
-    @DatabaseField
+    @DatabaseField(unique = true)
     private String name;
     
     @DatabaseField
@@ -25,7 +27,7 @@ public class Spectacle {
     private Integer places;
     
     @DatabaseField
-    private String date;
+    private Date date;
     
     @DatabaseField
     private String cover;
@@ -33,7 +35,7 @@ public class Spectacle {
     public Spectacle() {
     }
 
-	public Spectacle(String name, String details, Integer prix, Integer prix_livraison, Integer places, String date,
+	public Spectacle(String name, String details, Integer prix, Integer prix_livraison, Integer places, Date date,
 			String cover) {
 		super();
 		this.name = name;
@@ -93,11 +95,11 @@ public class Spectacle {
 		this.places = places;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
