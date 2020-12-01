@@ -17,22 +17,22 @@ import models.Connectrice;
 import models.Personne;
 import servlets.Home;
 
-@WebServlet("/form_reservation")
-public class Reservation extends HttpServlet {
+@WebServlet("/form_abonner")
+public class Abonner extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public Reservation() {
+    public Abonner() {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		getServletContext().getRequestDispatcher("/forms/reservation.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/forms/abonner.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String places = request.getParameter("places").trim();
-		String livraison = request.getParameter("livraison").trim();
-		
+//		String places = request.getParameter("places").trim();
+//		String livraison = request.getParameter("livraison").trim();
+//		
 //	    if(username.isEmpty() | confirm.isEmpty() | domicile.isEmpty()){
 //	    	request.setAttribute("erreur", "Vous devez completer tout les champs!");
-//	    }  else {
+//	    } else {
 //		    Personne personne = new Personne(username, password, domicile, email);
 //		    
 //		    try {

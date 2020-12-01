@@ -22,6 +22,10 @@
 		<servlet-class>forms.Reservation</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>form_abonner</servlet-name>
+		<servlet-class>forms.Abonner</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>form_spectacle</servlet-name>
 		<servlet-class>forms.Spectacles</servlet-class>
 	</servlet>
