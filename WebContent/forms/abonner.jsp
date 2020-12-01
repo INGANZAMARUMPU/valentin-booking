@@ -14,7 +14,7 @@
 <%@ include file="../menu.jsp" %>
 <br>
 Rechercher un client
-<form action="form_abonner" method="post">
+<form action="form_abonner?recherche=1" method="post">
 	<p class="erreur">${erreur}</p>
 	<label for="username">Username</label>
 	<input type="text" id="username" name="username"/>
@@ -27,27 +27,22 @@ Informations du client
 	<div>
 		<label for="username">Nom d'utilisateur</label>
 		<br>
-		<input type="text" id="username" name="username"/>
+		<input type="text" id="username" name="username" value="${ personne.username }"/>
 	</div>
 	<div>
 		<label for="email">email</label>
 		<br>
-		<input type="email" id="email" name="email"/>
-	</div>
-	<div>
-		<label for="password">mot de passe</label>
-		<br>
-		<input type="password" id="password" name="password"/>
-	</div>
-	<div>
-		<label for="confirm">confirmation</label>
-		<br>
-		<input type="password" id="confirm" name="confirm"/>
+		<input type="email" id="email" name="email"  value="${ personne.email }"/>
 	</div>
 	<div>
 		<label for="domicile">Addresse complet</label>
 		<br>
-		<input type="text" id="domicile" name="domicile"/>
+		<input type="text" id="domicile" name="domicile" value="${ personne.domicile }"/>
+	</div>
+	<div>
+		<label for="places">Nombre de places</label>
+		<br>
+		<input type="number" id="places" name="places" value="1"/>
 	</div>
 	<input type="submit" value="envoyer"/>
 </form>

@@ -31,7 +31,7 @@
 							<c:when test="${!empty sessionScope.user }">
 								<a href="form_reservation">Reserver</a>
 								<c:if test="${!empty sessionScope.user.is_agent }">
-									<a href="form_abonner">Abonner</a>
+									<a href="form_abonner?event=${ spectacle.id }">Abonner</a>
 								</c:if>
 								<c:if test="${!empty sessionScope.user.is_admin }">
 									<a href="#">Modifier</a>

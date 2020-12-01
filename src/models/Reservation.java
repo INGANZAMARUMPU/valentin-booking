@@ -4,7 +4,7 @@ import com.j256.ormlite.table.DatabaseTable;
 
 
 @DatabaseTable(tableName = "reservation")
-public class Reservations {
+public class Reservation {
 	    
     @DatabaseField(id = true)
     private Integer id;
@@ -21,10 +21,10 @@ public class Reservations {
 	@DatabaseField(defaultValue="true")
 	private Boolean online;
     
-    public Reservations() {
+    public Reservation() {
     }
 
-	public Reservations(Personne personne, Spectacle spectacle, Integer places, Boolean online) {
+	public Reservation(Personne personne, Spectacle spectacle, int places, boolean online) {
 		super();
 		this.personne = personne;
 		this.spectacle = spectacle;
