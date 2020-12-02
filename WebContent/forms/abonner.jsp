@@ -19,9 +19,8 @@ Rechercher un client
 	<input type="text" id="username" name="username" required/>
 	<input type="submit" value="recherche"/>
 </form>
-<hr>
-Informations du client
-<form action="form_abonner" method="post">
+<form action="form_abonner" class="form" method="post">
+<b>Informations du client</b>
 	<p class="erreur">${erreur}</p>
 	<div>
 		<label for="username">Nom d'utilisateur</label>

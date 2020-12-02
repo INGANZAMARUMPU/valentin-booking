@@ -13,7 +13,7 @@
 
 <%@ include file="../menu.jsp" %>
 
-<form action="form_reservation" method="post">
+<form class="form" action="form_reservation" method="post">
 	<p class="erreur">${erreur}</p>
 	<div>
 		<label for="places">Places</label>
