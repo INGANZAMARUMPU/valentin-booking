@@ -26,6 +26,10 @@
     <servlet-class>forms.Spectacles</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>details</servlet-name>
+    <servlet-class>Details</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>reservations</servlet-name>
     <servlet-class>servlets.Reservations</servlet-class>
   </servlet>

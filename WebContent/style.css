@@ -49,3 +49,9 @@ form{
 	text-align: center;
 	text-decoration: none;
 }
+.reservation{
+	display:flex;
+}
+.reservation div{
+	margin: 4px;
+}
