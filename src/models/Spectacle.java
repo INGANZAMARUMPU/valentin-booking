@@ -114,7 +114,7 @@ public class Spectacle {
 
 	@Override
 	public String toString() {
-		return "Spectacle [name=" + name + ", prix=" + prix + ", places=" + places + ", date=" + date + "]";
+		return name + " " + " du " + date;
 	}
 
 }

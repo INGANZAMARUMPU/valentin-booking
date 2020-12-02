@@ -8,9 +8,7 @@
 		</c:when>
 		<c:otherwise>
 			<c:if test="${!empty sessionScope.user && sessionScope.user.is_admin}">
-				<div>
-					<a href="#spectacles">spectacles</a>
-				</div>
+				<a href="reservations">reservations</a>
 			</c:if>
 			<a href="home?logout=1">deconnexion</a>
 		</c:otherwise>

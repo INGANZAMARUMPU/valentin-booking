@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Les Spectacles</title>
 <style type="text/css">
-	<%@ include file="/home.css" %>
+	<%@ include file="/style.css" %>
 </style>
 </head>
 

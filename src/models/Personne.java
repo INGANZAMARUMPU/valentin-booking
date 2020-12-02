@@ -17,7 +17,7 @@ public class Personne {
     @DatabaseField
     private String domicile;
     
-    @DatabaseField
+    @DatabaseField(unique=true)
     private String email;
 	
 	@DatabaseField(defaultValue="false")
@@ -91,6 +91,11 @@ public class Personne {
 
 	public void setIs_admin(Boolean is_admin) {
 		this.is_admin = is_admin;
+	}
+
+	@Override
+	public String toString() {
+		return username + " " + domicile + " " + email;
 	}
 	
 }
