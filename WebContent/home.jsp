@@ -15,6 +15,7 @@
 			<a href="form_spectacle">Ajouter Un spectacle</a>
 		</div>
 	</c:if>
+	<p class="success">${success}</p>
 	<div>
 		<c:choose>
 			<c:when test="${spectacles.size() == 0}">
@@ -29,7 +30,7 @@
 						<div>${ spectacle.details }</div>
 						<c:choose>
 							<c:when test="${!empty sessionScope.user }">
-								<a href="form_reservation">Reserver</a>
+								<a href="form_reservation?event=${ spectacle.id }">Reserver</a>
 								<c:if test="${!empty sessionScope.user.is_agent }">
 									<a href="form_abonner?event=${ spectacle.id }">Abonner</a>
 								</c:if>

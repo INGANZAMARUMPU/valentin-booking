@@ -2,23 +2,17 @@ package forms;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.Where;
 
 import models.Connectrice;
 import models.Personne;
-import models.Reservation;
 import servlets.Home;
 
 @WebServlet("/form_abonner")
@@ -51,6 +45,7 @@ public class Abonner extends HttpServlet {
 			    try {
 					Home.connectrice.reservationDAO.create(reservation);
 					getServletContext().getRequestDispatcher("/").forward(request, response);
+					return;
 				} catch (SQLException e) {
 			    	request.setAttribute("erreur", e.getMessage());
 				}
@@ -72,8 +67,13 @@ public class Abonner extends HttpServlet {
 	    if(username.isEmpty() | email.isEmpty() | places.isEmpty() | domicile.isEmpty()){
 	    	request.setAttribute("erreur", "Vous devez completer tout les champs!");
 	    } else {
+	    	Where where = Home.connectrice.personneDAO.queryBuilder().where();
+	    	try {
+			    personne = (models.Personne) where.eq("username", username).queryForFirst();
+			    if(personne!=null) return personne;
+			} catch (Exception e) {}
+	    	
 		    new_pers = new Personne(username, "password", domicile, email);
-		    
 		    try {
 				Home.connectrice.personneDAO.create(new_pers);
 				personne = new Personne(username, "password", domicile, email);
@@ -82,6 +82,6 @@ public class Abonner extends HttpServlet {
 		    	request.setAttribute("erreur", e.getMessage());
 			}
 	    }
-	    return new_pers;
+	    return null;
 	}
 }

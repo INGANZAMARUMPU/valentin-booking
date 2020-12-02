@@ -18,12 +18,12 @@
 	<div>
 		<label for="username">Nom d'utilisateur</label>
 		<br>
-		<input type="text" id="username" name="username"/>
+		<input type="text" id="username" required name="username"/>
 	</div>
 	<div>
 		<label for="password">mot de passe</label>
 		<br>
-		<input type="password" id="password" name="password"/>
+		<input type="password" id="password" required name="password"/>
 	</div>
 	<input type="submit" value="connexion"/>
 </form>

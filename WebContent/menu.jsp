@@ -7,6 +7,11 @@
 			<a href="register">s'abonner</a>
 		</c:when>
 		<c:otherwise>
+			<c:if test="${!empty sessionScope.user && sessionScope.user.is_admin}">
+				<div>
+					<a href="#spectacles">spectacles</a>
+				</div>
+			</c:if>
 			<a href="home?logout=1">deconnexion</a>
 		</c:otherwise>
 	</c:choose>
