@@ -40,11 +40,13 @@ public class Abonner extends HttpServlet {
 		} else {
 			if ((creationPersonne(request) != null) && spectacle != null){
 				String places = request.getParameter("places").trim();
+				personne = Connectrice.recherchePersonne(personne.getUsername());
 				models.Reservation reservation = new models.Reservation(
 						personne, spectacle, Integer.parseInt(places), false);		    
 			    try {
 					Home.connectrice.reservationDAO.create(reservation);
-					getServletContext().getRequestDispatcher("/").forward(request, response);
+					request.setAttribute("reservation", reservation);
+					getServletContext().getRequestDispatcher("/details").forward(request, response);
 					return;
 				} catch (SQLException e) {
 			    	request.setAttribute("erreur", e.getMessage());
@@ -63,21 +65,21 @@ public class Abonner extends HttpServlet {
 		String email = request.getParameter("email").trim();
 		String domicile = request.getParameter("domicile").trim();
 		String places = request.getParameter("places").trim();
+    	Where where = Home.connectrice.personneDAO.queryBuilder().where();
 		
 	    if(username.isEmpty() | email.isEmpty() | places.isEmpty() | domicile.isEmpty()){
 	    	request.setAttribute("erreur", "Vous devez completer tout les champs!");
 	    } else {
-	    	Where where = Home.connectrice.personneDAO.queryBuilder().where();
 	    	try {
 			    personne = (models.Personne) where.eq("username", username).queryForFirst();
 			    if(personne!=null) return personne;
 			} catch (Exception e) {}
 	    	
-		    new_pers = new Personne(username, "password", domicile, email);
 		    try {
+			    new_pers = new Personne(username, "password", domicile, email);
 				Home.connectrice.personneDAO.create(new_pers);
-				personne = new Personne(username, "password", domicile, email);
-				return personne;
+				personne = new_pers;
+				return new_pers;
 			} catch (SQLException e) {
 		    	request.setAttribute("erreur", e.getMessage());
 			}
