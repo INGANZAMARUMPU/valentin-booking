@@ -27,7 +27,7 @@
   </servlet>
   <servlet>
     <servlet-name>details</servlet-name>
-    <servlet-class>Details</servlet-class>
+    <servlet-class>servlets.Details</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>reservations</servlet-name>

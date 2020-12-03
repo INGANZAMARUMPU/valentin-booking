@@ -12,17 +12,19 @@
 <body>
 
 <%@ include file="../menu.jsp" %>
-
-<c:forEach items="${reservations}" var="reservation">
-	
-	<div class="reservation">
-		<div>${ reservation.personne.username }</div>
-		<div>${ reservation.personne.email }</div>
-		<div>${ reservation.spectacle.name }</div>
+<p class="erreur">${erreur}</p>
+<div class="ticket">
+	<div class="titre jaune">
 		<div>${ reservation.spectacle.date }</div>
-		<div><a href="details?&reservation=${ reservation.id }">Detail</a></div>
+		<div>${ reservation.spectacle.details }</div>
 	</div>
-</c:forEach>
+	<div class="name jaune">${ reservation.spectacle.name }</div>
+	<div class="numero jaune">ticket numero ${ reservation.spectacle.id }</div>
+	<div>${ reservation.personne.username }</div>
+	<div>${ reservation.spectacle.prix } Fbu</div>
+	<div class="placement">Placement libre</div>
+</div>
+<div><button>Imprimer</button></div>
 
 </body>
 </html>

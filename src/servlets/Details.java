@@ -26,21 +26,23 @@ public class Details extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Personne personne;
 	Connectrice connectrice = new Connectrice();
-	List<Reservation> reservations = new ArrayList<>();
+	Reservation reservation;
 	
     public Details() {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+		String reserv = request.getParameter("reservation");
 		try{
-			reservations = connectrice.reservationDAO.queryForAll();
+			Where where = connectrice.reservationDAO.queryBuilder().where();
+			reservation = (Reservation) where.eq("id", reserv).queryForFirst();
 		} catch (Exception e) {
 			System.err.println("======= "+e.getMessage());
 		}
-		request.setAttribute("reservations", reservations);
-		getServletContext().getRequestDispatcher("/reservations.jsp").forward(request, response);
+		request.setAttribute("reservation", reservation);
+		getServletContext().getRequestDispatcher("/details.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		getServletContext().getRequestDispatcher("/reservations.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/details.jsp").forward(request, response);
 	}
 }
