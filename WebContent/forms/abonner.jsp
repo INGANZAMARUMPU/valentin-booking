@@ -23,7 +23,7 @@ Rechercher un client
 <b>Informations du client</b>
 	<p class="erreur">${erreur}</p>
 	<div>
-		<label for="username">Nom d'utilisateur</label>
+		<label for="username">Nom du client</label>
 		<br>
 		<input type="text" id="username" name="username" required value="${ personne.username }"/>
 	</div>

@@ -1,0 +1,52 @@
+.ticket{
+	font-family: "Lucida Console", "Courier New", monospace;
+	width:320px;
+	height:170px;
+	border: 1px solid black;
+	position: relative;
+	padding: 10px;
+	margin: 10px;
+}
+.jaune{
+	background-color: yellow;
+	-webkit-print-color-adjust: exact;
+}
+.titre{
+	width: 70%;
+	font-weight: bold;
+	text-align: center;
+	margin: auto;
+}
+.name{
+	background-color: #57a;
+	width: 70%;
+	color: white;
+	margin-top: 30px;
+	padding: 3px;
+	-webkit-print-color-adjust: exact;
+}
+.numero{
+	width: 120px;
+	position: absolute;
+	text-align: center;
+    transform: rotate(90deg);
+    left: 250px;
+    top: 80px;
+	font-size: 9pt;
+}
+.user{
+	margin-top: 30px;
+	width: 155px;
+	padding: 3px 10px;
+}
+.placement{
+	position: absolute;
+	left: 200px;
+	top: 150px;
+	font-size: 8pt;
+}
+@media print {
+  .menu, button{
+  	display:none;
+  }
+}

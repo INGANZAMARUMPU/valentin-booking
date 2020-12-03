@@ -8,6 +8,9 @@
 <style type="text/css">
 	<%@ include file="/style.css" %>
 </style>
+<style type="text/css">
+	<%@ include file="/ticket.css" %>
+</style>
 </head>
 <body>
 
@@ -18,13 +21,19 @@
 		<div>${ reservation.spectacle.date }</div>
 		<div>${ reservation.spectacle.details }</div>
 	</div>
-	<div class="name jaune">${ reservation.spectacle.name }</div>
+	<div class="name">${ reservation.spectacle.name }</div>
 	<div class="numero jaune">ticket numero ${ reservation.spectacle.id }</div>
-	<div>${ reservation.personne.username }</div>
-	<div>${ reservation.spectacle.prix } Fbu</div>
+	<div class="user jaune">
+		<div>${ reservation.personne.username }</div>
+		<div>${ reservation.spectacle.prix } Fbu</div>
+	</div>
 	<div class="placement">Placement libre</div>
 </div>
-<div><button>Imprimer</button></div>
-
+<div><button onclick="imprimer()">Imprimer</button></div>
+<script type="text/javascript">
+	function imprimer(event){
+		window.print();
+	}
+</script>
 </body>
 </html>

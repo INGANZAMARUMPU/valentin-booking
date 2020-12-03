@@ -37,7 +37,7 @@
 		<input type="number" id="prix" name="prix"/>
 	</div>
 	<div>
-		<label for="details">Details</label>
+		<label for="details">Lieu</label>
 		<br>
 		<input type="text" id="details" name="details"/>
 	</div>
